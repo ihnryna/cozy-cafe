@@ -5,6 +5,7 @@ public partial class Player : CharacterBody2D
 {
 	public const float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
+	private Vector2 prevDirection = Vector2.Down.Normalized();
 	private AnimatedSprite2D sprite;
 
     public override void _Ready()
@@ -20,23 +21,44 @@ public partial class Player : CharacterBody2D
         Velocity = direction * Speed;
 		if (direction != Vector2.Zero)
 		{
-			if (direction.X<0)
+			if (direction.Y<0)
+			{
+				Play("walk_back");
+			}
+			else if (direction.X<0)
+			{
+				Play("walk_left");
+			}
+			else if (direction.X>0)
+			{
+				Play("walk_right");
+			}
+			else if (direction.Y>0)
+			{
+				Play("walk_front");
+			}
+			prevDirection = direction;
+		}
+		else
+		{
+			if (prevDirection.X<0)
 			{
 				Play("idle_left");
 			}
-			if (direction.X>0)
+			if (prevDirection.X>0)
 			{
 				Play("idle_right");
 			}
-			if (direction.Y<0)
+			if (prevDirection.Y<0)
 			{
 				Play("idle_back");
 			}
-			if (direction.Y>0)
+			if (prevDirection.Y>0)
 			{
 				Play("idle_front");
-			}
+			}			
 		}
+		GD.Print(direction);
         MoveAndSlide();
     }
 
