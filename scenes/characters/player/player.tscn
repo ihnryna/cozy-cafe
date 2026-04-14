@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b4776xg72tc0x"]
 
-[ext_resource type="Script" uid="uid://bwpyrj5egmv50" path="res://scenes/characters/player/Player.cs" id="1_t61fv"]
-[ext_resource type="Texture2D" uid="uid://bcg45x0bbrqbq" path="res://assets/figures/character_directions.png" id="3_686vu"]
+[ext_resource type="Script" uid="uid://bwpyrj5egmv50" path="res://scripts/Player.cs" id="1_t61fv"]
+[ext_resource type="Texture2D" uid="uid://bcg45x0bbrqbq" path="res://assets/models/character_directions.png" id="3_686vu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t61fv"]
 atlas = ExtResource("3_686vu")
@@ -214,11 +214,11 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7uws0"]
-radius = 64.94
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t61fv"]
 
 [node name="Player" type="CharacterBody2D" unique_id=2120743211]
 position = Vector2(287, 246)
+collision_layer = 2
 script = ExtResource("1_t61fv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=378199303]
@@ -229,6 +229,6 @@ animation = &"walk_back"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2016938408]
-position = Vector2(7, -72)
-scale = Vector2(1.7784026, 1.7784026)
-shape = SubResource("CircleShape2D_7uws0")
+position = Vector2(7, 22)
+scale = Vector2(6.58751, 2.4287167)
+shape = SubResource("RectangleShape2D_t61fv")
