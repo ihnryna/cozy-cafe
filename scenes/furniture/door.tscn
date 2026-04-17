@@ -89,10 +89,10 @@ animations = [{
 size = Vector2(37.130676, 73.85807)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8xpn"]
-size = Vector2(6.979438, 6.3533735)
+size = Vector2(6.979438, 6.0603228)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_upqih"]
-points = PackedVector2Array(-3.1664178, 3.0417557, -3.1337469, -2.9973702, -2.5129855, -3.0281816, -2.5456564, 3.0725684)
+points = PackedVector2Array(-3.1684744, 2.8738184, -3.1337469, -2.9973702, -2.5129855, -3.0281816, -2.6375544, 2.8738184)
 
 [node name="Door" type="StaticBody2D" unique_id=549654697]
 scale = Vector2(1.9700247, 2.4303372)
@@ -114,7 +114,7 @@ debug_color = Color(0, 0.6, 0, 0.41960785)
 [node name="DoorCollider" type="StaticBody2D" parent="." unique_id=1567960409]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCollider" unique_id=1905208382]
-position = Vector2(0.069642305, -5.9569182)
+position = Vector2(0.06964235, -6.6871777)
 scale = Vector2(5.798367, 4.9838376)
 shape = SubResource("RectangleShape2D_r8xpn")
 
