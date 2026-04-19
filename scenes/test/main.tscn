@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://drwne13caxn6l"]
-
-[ext_resource type="TileSet" uid="uid://clcjs6akpaxih" path="res://tilesets/furniture.tres" id="1_wwlvk"]
-
-[node name="Main" type="Node2D" unique_id=27357124]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2122438630]
-tile_set = ExtResource("1_wwlvk")

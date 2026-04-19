@@ -233,3 +233,6 @@ autoplay = "idle_front"
 position = Vector2(7.5, 22)
 scale = Vector2(6.58751, 2.4287167)
 shape = SubResource("RectangleShape2D_t61fv")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1674234572]
+avoidance_enabled = true

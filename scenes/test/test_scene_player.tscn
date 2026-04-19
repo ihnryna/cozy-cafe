@@ -3,6 +3,11 @@
 [ext_resource type="TileSet" uid="uid://dgw8wjgekq1en" path="res://tilesets/game_tile_set.tres" id="1_mhild"]
 [ext_resource type="PackedScene" uid="uid://b4776xg72tc0x" path="res://scenes/characters/player/player.tscn" id="2_q17pk"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_q17pk"]
+vertices = PackedVector2Array(465.04688, 957.5, 683.21875, 957.0469, 1116.9922, 956.21094, 1174.2813, 1184.1016, 1910.2109, 178.03906, 1917.7734, 518, 1678, 518, 1546.5625, 500.6172, 2.0625, 185.95313, 1178.6016, 481.64844, 1116.0234, 831.40625, 824.52344, 739.7578, 684.1797, 832.25, 390.7578, 740.60156, 1545.9766, 770.02344, 1678, 778, 823.5625, 614.96094, 391.71875, 615.7969, 1910, 778, 1910, 1341.9531, 1322.8594, 1188.2578, 464.09375, 832.7031, 32.25, 833.53906, 1327.0625, 769.65625, 9.9296875, 1334.0391, 31.289063, 958.34375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 3, 2, 10), PackedInt32Array(11, 10, 12, 13), PackedInt32Array(14, 7, 6, 15), PackedInt32Array(9, 10, 11, 16), PackedInt32Array(8, 7, 9), PackedInt32Array(8, 9, 16, 17), PackedInt32Array(15, 18, 19, 20), PackedInt32Array(1, 0, 21, 12), PackedInt32Array(13, 12, 21, 22), PackedInt32Array(20, 23, 14, 15), PackedInt32Array(17, 13, 22, 8), PackedInt32Array(24, 8, 22, 25), PackedInt32Array(19, 24, 25, 3), PackedInt32Array(25, 0, 3), PackedInt32Array(19, 3, 20)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1920, 168, 1928, 528, 1688, 528, 1688, 768, 1920, 768, 1920, 1352, 0, 1344, -8, 176, 1920, 168, 1538.3545, 510.21466, 1188.5425, 492.1831, 1184.3352, 1174.3771, 1312.9604, 1177.9834, 1317.1677, 759.65125, 1536, 760, 1536.5513, 505.40625)])
+
 [node name="TestSceneTilemap" type="Node2D" unique_id=1713460306]
 
 [node name="GameTileMap" type="Node2D" parent="." unique_id=857849174]
@@ -56,3 +61,25 @@ tile_set = ExtResource("1_mhild")
 [node name="Player" parent="." unique_id=2120743211 instance=ExtResource("2_q17pk")]
 position = Vector2(1624.0001, 792)
 scale = Vector2(0.5755062, 0.5755062)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1941882244]
+position = Vector2(1.6177368, 7.1225586)
+navigation_polygon = SubResource("NavigationPolygon_q17pk")
+
+[node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D" unique_id=1574106326]
+position = Vector2(-183.49121, 185.362)
+scale = Vector2(1.4299728, 1.4901938)
+color = Color(1, 1, 0, 0.6117647)
+polygon = PackedVector2Array(613.7156, 440.79596, 901.83295, 440.25916, 902.39233, 510.58557, 613.1561, 511.12238)
+
+[node name="Polygon2D2" type="Polygon2D" parent="NavigationRegion2D" unique_id=617273722]
+position = Vector2(-475.95984, -31.090576)
+scale = Vector2(1.4299728, 1.4901938)
+color = Color(1, 1, 0, 0.6117647)
+polygon = PackedVector2Array(613.7156, 440.79596, 901.83295, 440.25916, 902.39233, 510.58557, 613.1561, 511.12238)
+
+[node name="Polygon2D3" type="Polygon2D" parent="NavigationRegion2D" unique_id=1402743207]
+position = Vector2(-835.4258, 186.65039)
+scale = Vector2(1.4299728, 1.4901938)
+color = Color(1, 1, 0, 0.6117647)
+polygon = PackedVector2Array(613.7156, 440.79596, 901.83295, 440.25916, 902.39233, 510.58557, 613.1561, 511.12238)

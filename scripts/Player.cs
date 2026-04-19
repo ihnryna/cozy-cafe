@@ -7,17 +7,56 @@ public partial class Player : CharacterBody2D
 	public const float JumpVelocity = -400.0f;
 	private Vector2 prevDirection = Vector2.Down.Normalized();
 	private AnimatedSprite2D sprite;
+	private NavigationAgent2D agent;
+
 
     public override void _Ready()
 	{
 		sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		agent = GetNode<NavigationAgent2D>("NavigationAgent2D");
+
+		agent.PathDesiredDistance = 4f;
+		agent.TargetDesiredDistance = 4f;
+		agent.Radius = 4f;
+
 	}
+
+	public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
+        {
+            agent.TargetPosition = GetGlobalMousePosition();
+        }
+    }
+
 
 
 	public override void _PhysicsProcess(double delta)
     {
-        Vector2 direction = Input.GetVector("walk_left", "walk_right", "walk_up", "walk_down");
-        direction = direction.Normalized();
+		if (agent.IsNavigationFinished())
+        {
+            Velocity = Vector2.Zero;
+			if (prevDirection.Y<0)
+			{
+				Play("idle_back");
+			}
+			else if (prevDirection.X<0)
+			{
+				Play("idle_left");
+			}
+			else if (prevDirection.X>0)
+			{
+				Play("idle_right");
+			}
+			else if (prevDirection.Y>0)
+			{
+				Play("idle_front");
+			}			
+            return;
+        }
+
+        Vector2 nextPosition = agent.GetNextPathPosition();
+        Vector2 direction = (nextPosition - GlobalPosition).Normalized();
         Velocity = direction * Speed;
 		if (direction != Vector2.Zero)
 		{
@@ -39,26 +78,6 @@ public partial class Player : CharacterBody2D
 			}
 			prevDirection = direction;
 		}
-		else
-		{
-			if (prevDirection.X<0)
-			{
-				Play("idle_left");
-			}
-			if (prevDirection.X>0)
-			{
-				Play("idle_right");
-			}
-			if (prevDirection.Y<0)
-			{
-				Play("idle_back");
-			}
-			if (prevDirection.Y>0)
-			{
-				Play("idle_front");
-			}			
-		}
-		//GD.Print(direction);
         MoveAndSlide();
     }
 
