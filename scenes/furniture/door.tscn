@@ -2,43 +2,43 @@
 
 [ext_resource type="Script" uid="uid://c5lymbecgdmps" path="res://scenes/furniture/Door.cs" id="1_upqih"]
 [ext_resource type="PackedScene" uid="uid://cswq40f67er6o" path="res://scenes/components/interactable_component.tscn" id="3_58ooy"]
-[ext_resource type="Texture2D" uid="uid://7tt41clbk8r0" path="res://assets/models/door.png" id="3_pwyt1"]
+[ext_resource type="Texture2D" uid="uid://c2v6d4e0rut5j" path="res://assets/models/door.png" id="3_pwyt1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upqih"]
 atlas = ExtResource("3_pwyt1")
-region = Rect2(960, 0, 320, 440)
+region = Rect2(96, 0, 32, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_58ooy"]
 atlas = ExtResource("3_pwyt1")
-region = Rect2(640, 0, 320, 440)
+region = Rect2(64, 0, 32, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pwyt1"]
 atlas = ExtResource("3_pwyt1")
-region = Rect2(320, 0, 320, 440)
+region = Rect2(32, 0, 32, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kf77y"]
 atlas = ExtResource("3_pwyt1")
-region = Rect2(0, 0, 320, 440)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vbi85"]
-atlas = ExtResource("3_pwyt1")
-region = Rect2(0, 0, 320, 440)
+region = Rect2(0, 0, 32, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2m6s"]
 atlas = ExtResource("3_pwyt1")
-region = Rect2(0, 0, 320, 440)
+region = Rect2(0, 0, 32, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_on0ee"]
 atlas = ExtResource("3_pwyt1")
-region = Rect2(320, 0, 320, 440)
+region = Rect2(0, 0, 32, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_knb1o"]
 atlas = ExtResource("3_pwyt1")
-region = Rect2(640, 0, 320, 440)
+region = Rect2(32, 0, 32, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3g3qd"]
 atlas = ExtResource("3_pwyt1")
-region = Rect2(960, 0, 320, 440)
+region = Rect2(64, 0, 32, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbi85"]
+atlas = ExtResource("3_pwyt1")
+region = Rect2(96, 0, 32, 44)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vbi85"]
 animations = [{
@@ -61,16 +61,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vbi85")
+"texture": SubResource("AtlasTexture_a2m6s")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a2m6s")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_on0ee")
 }, {
@@ -79,6 +76,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3g3qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbi85")
 }],
 "loop": false,
 "name": &"open_door",
@@ -100,8 +100,9 @@ script = ExtResource("1_upqih")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=746764675]
 position = Vector2(-1.4901161e-08, 0)
-scale = Vector2(0.120075695, 0.10098247)
+scale = Vector2(1.2217807, 1.0275054)
 sprite_frames = SubResource("SpriteFrames_vbi85")
+animation = &"open_door"
 autoplay = "default"
 
 [node name="InteractableComponent" parent="." unique_id=829190816 instance=ExtResource("3_58ooy")]
