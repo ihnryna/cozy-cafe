@@ -34,20 +34,20 @@ Icon = SubResource("AtlasTexture_iw0db")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1172436085]
 position = Vector2(-2.670288e-05, 0.9679909)
-scale = Vector2(5.84, 5.84)
+scale = Vector2(4.485, 4.485)
 sprite_frames = SubResource("SpriteFrames_ti1lt")
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=1659754428]
 script = ExtResource("3_we3um")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1480189925]
-scale = Vector2(4.838078, 4.838078)
+scale = Vector2(3.748458, 3.748458)
 shape = SubResource("CircleShape2D_iw0db")
 
 [node name="InteractableComponent" parent="." unique_id=829190816 instance=ExtResource("1_iw0db")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1246278133]
-position = Vector2(0.08548812, -3.2917242)
-scale = Vector2(10.87933, 10.87933)
+position = Vector2(1.1920929e-07, 1.1920929e-07)
+scale = Vector2(8.469317, 8.469317)
 shape = SubResource("CircleShape2D_ycbtm")
 debug_color = Color(0, 0.6, 0, 0.41960785)

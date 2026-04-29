@@ -16,7 +16,12 @@ public partial class Item : Area2D
 		interactableComponent.InteractableDeactivated += OnInteractableDeactivated;
 
 		((ClickArea)clickArea).Owner = this;
+		GD.Print(" NEW ITEM");
 
+
+		var player = GetTree().GetFirstNodeInGroup("player") as Player;
+
+        this.Position = player.Position;
 
         clickArea.InputEvent += OnClick;
     }

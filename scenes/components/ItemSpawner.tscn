@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://crdx6t02spnfu"]
+
+[ext_resource type="Script" uid="uid://dtpqay2jm4ky4" path="res://scenes/components/ItemSpawner.cs" id="1_1sfp6"]
+[ext_resource type="Texture2D" uid="uid://c2v6d4e0rut5j" path="res://assets/models/cozy_cafe.png" id="2_daudi"]
+[ext_resource type="Script" uid="uid://cqmerqrgymje2" path="res://scenes/items/ClickArea.cs" id="3_daudi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycodn"]
+atlas = ExtResource("2_daudi")
+region = Rect2(112, 192, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ycodn"]
+
+[node name="ItemSpawner" type="Area2D" unique_id=1247693284]
+script = ExtResource("1_1sfp6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1628991266]
+texture = SubResource("AtlasTexture_ycodn")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=625624817]
+scale = Vector2(0.1577028, 0.1577028)
+script = ExtResource("3_daudi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=2134055606]
+scale = Vector2(4.838078, 4.838078)
+shape = SubResource("CircleShape2D_ycodn")

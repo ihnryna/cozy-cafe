@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Player : CharacterBody2D
 {
@@ -10,6 +11,7 @@ public partial class Player : CharacterBody2D
 	private NavigationAgent2D agent;
 	private Sprite2D leftHand;
 	private Sprite2D rightHand;
+	private List<String?> hands = [null,null]; 
 
 	private Item _targetItem;
 	private bool _canPick = false;
@@ -108,16 +110,33 @@ public partial class Player : CharacterBody2D
     {
 		if (_targetItem != null && _canPick && !_isPicking)
 		{
-			_isPicking = true;
+			if (pickingHand == leftHand && hands[0] == null)
+			{
+				_isPicking = true;
+				PickItem(_targetItem);
 
-			PickItem(_targetItem);
+				_targetItem.Visible = false;
+				_targetItem.SetProcess(false);
 
-			_targetItem.Visible = false;
-			_targetItem.SetProcess(false);
+				_targetItem = null;
+				_canPick = false;
+				_isPicking = false;
+			}
+			else if (pickingHand == rightHand && hands[1] == null)
+			{
+				_isPicking = true;
+				PickItem(_targetItem);
 
-			_targetItem = null;
-			_canPick = false;
-			_isPicking = false;
+				_targetItem.Visible = false;
+				_targetItem.SetProcess(false);
+
+				_targetItem = null;
+				_canPick = false;
+				_isPicking = false;
+			} else
+			{
+				GD.Print("This hand is full");
+			}
 
 		}
 
@@ -180,6 +199,10 @@ public partial class Player : CharacterBody2D
 	public void PickItem(Item item)
 	{
 		GD.Print("PickItem");
+		if (pickingHand == leftHand )
+			hands[0] = item.Name;
+		if (pickingHand == rightHand )
+			hands[1] = item.Name;
     	pickingHand.Texture = item.Icon;
 		pickingHand.Visible = true;
 	}

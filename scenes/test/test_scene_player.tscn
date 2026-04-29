@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://dgw8wjgekq1en" path="res://tilesets/game_tile_set.tres" id="1_mhild"]
 [ext_resource type="PackedScene" uid="uid://b4776xg72tc0x" path="res://scenes/characters/player/player.tscn" id="2_q17pk"]
 [ext_resource type="PackedScene" uid="uid://b1mrxck34oouq" path="res://scenes/items/Item.tscn" id="3_vcgnq"]
+[ext_resource type="PackedScene" uid="uid://crdx6t02spnfu" path="res://scenes/components/ItemSpawner.tscn" id="4_e46wm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q17pk"]
 vertices = PackedVector2Array(465.04688, 957.5, 683.21875, 957.0469, 1116.9922, 956.21094, 1174.2813, 1184.1016, 1910.2109, 178.03906, 1917.7734, 518, 1678, 518, 1546.5625, 500.6172, 2.0625, 185.95313, 1178.6016, 481.64844, 1116.0234, 831.40625, 824.52344, 739.7578, 684.1797, 832.25, 390.7578, 740.60156, 1545.9766, 770.02344, 1678, 778, 823.5625, 614.96094, 391.71875, 615.7969, 1910, 778, 1910, 1341.9531, 1322.8594, 1188.2578, 464.09375, 832.7031, 32.25, 833.53906, 1327.0625, 769.65625, 9.9296875, 1334.0391, 31.289063, 958.34375)
@@ -88,7 +89,11 @@ scale = Vector2(0.5193597, 0.5193597)
 
 [node name="Item" parent="GameTileMap" unique_id=659202729 instance=ExtResource("3_vcgnq")]
 position = Vector2(1814.237, 961.6959)
-scale = Vector2(0.7680563, 0.7680563)
+
+[node name="ItemSpawner" parent="GameTileMap" unique_id=83759878 instance=ExtResource("4_e46wm")]
+position = Vector2(495.3949, 418.56412)
+scale = Vector2(5.3677883, 5.3677883)
+ItemScene = ExtResource("3_vcgnq")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1941882244]
 visible = false
