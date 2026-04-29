@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwpyrj5egmv50" path="res://scripts/Player.cs" id="1_t61fv"]
 [ext_resource type="Texture2D" uid="uid://bcg45x0bbrqbq" path="res://assets/models/character_directions.png" id="3_686vu"]
+[ext_resource type="Texture2D" uid="uid://c2v6d4e0rut5j" path="res://assets/models/cozy_cafe.png" id="3_hss88"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t61fv"]
 atlas = ExtResource("3_686vu")
@@ -217,6 +218,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t61fv"]
 size = Vector2(26.26182, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxwvg"]
+atlas = ExtResource("3_hss88")
+region = Rect2(112, 80, 16, 16)
+
 [node name="Player" type="CharacterBody2D" unique_id=2120743211]
 position = Vector2(287, 246)
 collision_layer = 2
@@ -236,3 +241,13 @@ shape = SubResource("RectangleShape2D_t61fv")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1674234572]
 avoidance_enabled = true
+
+[node name="RightHandSprite" type="Sprite2D" parent="." unique_id=172884502]
+position = Vector2(149, -73)
+scale = Vector2(8.650255, 8.650255)
+texture = SubResource("AtlasTexture_bxwvg")
+
+[node name="LeftHandSprite" type="Sprite2D" parent="." unique_id=1523111175]
+position = Vector2(-145, -73)
+scale = Vector2(8.650255, 8.650255)
+texture = SubResource("AtlasTexture_bxwvg")

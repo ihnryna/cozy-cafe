@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b1mrxck34oouq"]
+
+[ext_resource type="PackedScene" uid="uid://cswq40f67er6o" path="res://scenes/components/interactable_component.tscn" id="1_iw0db"]
+[ext_resource type="Script" uid="uid://cem7mfh4a87nm" path="res://scenes/items/Item.cs" id="1_we3um"]
+[ext_resource type="Texture2D" uid="uid://c2v6d4e0rut5j" path="res://assets/models/cozy_cafe.png" id="2_we3um"]
+[ext_resource type="Script" uid="uid://cqmerqrgymje2" path="res://scenes/items/ClickArea.cs" id="3_we3um"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw0db"]
+atlas = ExtResource("2_we3um")
+region = Rect2(112, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r627"]
+atlas = ExtResource("2_we3um")
+region = Rect2(112, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ti1lt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r627")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iw0db"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ycbtm"]
+
+[node name="Item" type="Area2D" unique_id=659202729]
+script = ExtResource("1_we3um")
+Icon = SubResource("AtlasTexture_iw0db")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1172436085]
+position = Vector2(-2.670288e-05, 0.9679909)
+scale = Vector2(5.84, 5.84)
+sprite_frames = SubResource("SpriteFrames_ti1lt")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=1659754428]
+script = ExtResource("3_we3um")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1480189925]
+scale = Vector2(4.838078, 4.838078)
+shape = SubResource("CircleShape2D_iw0db")
+
+[node name="InteractableComponent" parent="." unique_id=829190816 instance=ExtResource("1_iw0db")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1246278133]
+position = Vector2(0.08548812, -3.2917242)
+scale = Vector2(10.87933, 10.87933)
+shape = SubResource("CircleShape2D_ycbtm")
+debug_color = Color(0, 0.6, 0, 0.41960785)
